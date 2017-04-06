@@ -1,8 +1,12 @@
-* {
+/** {
 	box-sizing: content-box;
-}
+}*/
 main {
 	position: relative;
+}
+h1 {
+	font-size: 2em;
+	font-weight: bold;
 }
 section.login-section {
 	position: fixed;
@@ -11,6 +15,7 @@ section.login-section {
 	z-index: 99;
 	width: 100%;
 	height: 100%;
+	font-size: 2rem;
 	background-color: rgba(100, 100, 100, 0.5);
 	display: flex;
 	display: -webkit-flex;
@@ -20,11 +25,8 @@ section.login-section {
 	-webkit-align-items: center;
 }
 
-ul {
-	list-style: none;
-}
-li {
-	display: inline-block;
+div.msgs-wrapper {
+	position: relative;
 }
 
 .hidden {
@@ -32,12 +34,102 @@ li {
 }
 
 #emojiContainer {
+	position: absolute;
+	left: 0;
+	bottom: 0;
 	width: 40%;
-	height: 40%;
+	height: 200px;
 	border: 1px solid #000;
-	display: flex;
-	display: -webkit-flex;
+	background-color: #aaa;
+	overflow-y: scroll;
 }
 #emojiContainer img{
 	display: inline-block;
+	width: 25px;
+	height: 25px;
+	margin: 2px;
+}
+label.label-image {
+	position: relative;
+}
+div.file-wrapper {
+	position: relative;
+}
+input.input-file {
+	position: absolute;
+	left: 0;
+	top: 0;
+	opacity: 0;
+	overflow: hidden;
+	width: 47px;
+}
+img.img-chat {
+	max-width: 50%;
+}
+div.msgs-container {
+	width: 512px;
+	min-width: 60%;
+	height: 400px;
+	border: 2px solid #ccc;
+	padding: 3px;
+	margin: 2px;
+	overflow: scroll;
+}
+
+div.control-wrapper {
+	width: 512px;
+	min-width: 60%;
+	border: 2px solid #ccc;
+	padding: 3px;
+	margin: 2px;
+	display: flex;
+	display: -webkit-flex;
+	flex-wrap: wrap;
+}
+.input-control {
+	flex-basis: 100%;
+	display: flex;
+}
+.input-area {
+	flex-basis: 100%;
+	display: flex;
+	justify-content: center;
+}
+.input-area textarea {
+	display: 1;
+	-webkit-flex: 1;
+}
+.input-area input {
+	-webkit-flex: initial;
+	flex: initial;
+	width: 100px;
+}
+ul {
+	list-style: none;
+	display: flex;
+	display: -webkit-flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: stretch;
+}
+li {
+	display: flex;
+	margin: 3px;
+	align-items: center;
+}
+li input.button {
+	line-height: 100%;
+}
+section.login-section div {
+	display: flex;
+	display: -webkit-flex;
+	align-items: center;
+}
+section.login-section div input {
+	margin: 10px;
+	font-size: 2rem;
+}
+
+div#msgs span{
+	margin: 3px;
 }

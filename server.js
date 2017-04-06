@@ -39,8 +39,8 @@
 			socket.broadcast.emit('newMsg', socket.nickname, msg, color);
 		});
 		//new image get
-		socket.on('img', function(imgData, color) {
-			socket.broadcast.emit('newImg', socket.nickname, imgData, color);
+		socket.on('img', function(imgData) {
+			socket.broadcast.emit('newImg', socket.nickname, imgData);
 		});
 	});
 

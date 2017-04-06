@@ -6,8 +6,9 @@
 		<meta name="description" content="a chat web application">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Chat</title>
+		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/style.css">
-		<!-- <link rel="stylesheet" href=""> -->
+		
 	</head>
 	<body>
 		<header>
@@ -16,33 +17,39 @@
 		</header>
 		<main>
 			<section class="main-section" id="mainSection">
-				<div id="msgs"></div>
-				<div id="inputControl">
-					<ul class="control-list">
-						<li>
-							<input id="colorControl" type="color" placeholder="#000" title="font color" />
-						</li>
-						<li>
-							<input id="emojiBtn" type="button" value="emoji" title="emoji" />
-						</li>
-						<li>
-							<div>
-								<input type="button" value="image" title="choose image" />
-								<input type="file" class="hidden" name="image" id="sendImage" />
-							</div>
-						</li>
-						<li>
-							<input id="clearBtn" type="button" value="clear"/>
-						</li>
-					</ul>
+				<div class="msgs-wrapper">
+					<div id="msgs" class="msgs-container"></div>
+					<div id="emojiContainer" class="hidden"></div>
 				</div>
-				<div id="userInput">
-					<textarea name="msgInput" id="msgInput" cols="30" rows="10" placeholder="Enter to send"></textarea>
+				<div class="control-wrapper">
+					<div class="input-control">
+						<ul class="control-list">
+							<li>
+								<input id="colorControl" type="color" class="" placeholder="#000" title="font color" />
+							</li>
+							<li>
+								<input id="emojiBtn" class="button" type="button" value="emoji" title="emoji" />
+							</li>
+							<li>
+								<label for="sendImage" class="label-image">
+								<!-- <div class="file-wrapper"> -->
+									<input type="button" value="image" class="button" title="choose image" />
+									<input type="file" class="input-file" name="image" id="sendImage" />
+								<!-- </div> -->
+								</label>
+							</li>
+							<li>
+								<input id="clearBtn" class="button" type="button" value="clear"/>
+							</li>
+						</ul>
+					</div>
+					<div class="input-area">
+						<textarea name="msgInput" id="msgInput" cols="30" rows="10" placeholder="Enter to send"></textarea>
+						<input type="button" id="sendBtn" class="btn" value="send"/>
+					</div>
 				</div>
-				<div id="send">
-					<input type="button" id="sendBtn" class="btn" value="send"/>
-				</div>
-				<div id="emojiContainer" class="hidden"></div>
+
+				
 			</section>
 			<section class="login-section" id="loginSection">
 				<p id="loginStatus">connecting to server...</p>
