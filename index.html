@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<meta charset="utf-8">
+		<meta name="author" content="neal">
+		<meta name="description" content="a chat web application">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Chat</title>
+		<link rel="stylesheet" href="css/style.css">
+		<!-- <link rel="stylesheet" href=""> -->
+	</head>
+	<body>
+		<header>
+			<h1>Chat room</h1>
+			<div id="status"></div>
+		</header>
+		<main>
+			<section class="main-section" id="mainSection">
+				<div id="msgs"></div>
+				<div id="inputControl">
+					<ul class="control-list">
+						<li>
+							<input id="colorControl" type="color" placeholder="#000" title="font color" />
+						</li>
+						<li>
+							<input id="emojiBtn" type="button" value="emoji" title="emoji" />
+						</li>
+						<li>
+							<div>
+								<input type="button" value="image" title="choose image" />
+								<input type="file" class="hidden" name="image" id="sendImage" />
+							</div>
+						</li>
+						<li>
+							<input id="clearBtn" type="button" value="clear"/>
+						</li>
+					</ul>
+				</div>
+				<div id="userInput">
+					<textarea name="msgInput" id="msgInput" cols="30" rows="10" placeholder="Enter to send"></textarea>
+				</div>
+				<div id="send">
+					<input type="button" id="sendBtn" class="btn" value="send"/>
+				</div>
+				<div id="emojiContainer" class="hidden"></div>
+			</section>
+			<section class="login-section" id="loginSection">
+				<p id="loginStatus">connecting to server...</p>
+				<div id="nicknameContainer" class="nickname-container">
+					<input type="text" placeholder="Enter your nick name" name="nickname" id="nicknameInput" />
+					<input type="button" id="loginBtn" value="login" />
+				</div>
+			</section>
+		</main>
+		<footer>
+			&copy
+			<span>2017, Minghao Pu</span>
+		</footer>
+
+		<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+		<script type="text/javascript" src="script/jEvent.js"></script>
+		<script type="text/javascript" src="script/Chat.js"></script>
+
+	</body>
+</html>
