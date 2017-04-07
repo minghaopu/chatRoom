@@ -13,7 +13,7 @@
 	// }
 	class Chat {
 		constructor() {
-			var _socket = io.connect();
+			var _socket = io.connect("http://localhost:3000");
 			var _isLogged = false;
 			var _nickname = "";
 			const event = window.jEventUtil;
@@ -28,7 +28,6 @@
 				let str = `<span class='${userClassStyle}'>${user}</span><span class='timespan'>(${date}): </span><br/><img class="img-chat" src="${imgData}"" />`;
 				msgToDisplay.innerHTML = str;
         		container.appendChild(msgToDisplay);
-        		console.log(container.scrollHeight, container.scrollTop);
         		setTimeout(function() {
         			container.scrollTop = container.scrollHeight;
         			msgToDisplay = container = null;
@@ -74,7 +73,6 @@
 						result = result.replace(match[0], `<img class="emoji" src="content/emoji/${emojiIndex}.gif" />`);
 					}
 				}
-				console.log(result);
 				return result;
 			};
 
@@ -125,6 +123,12 @@
 				}
 				_isLogged = false;
 				_nickname = "";
+			});
+			_socket.on("disconnect", function(...args) {
+				console.log(...args)
+			});
+			_socket.on("connect_error", function(...args) {
+				console.log(...args)
 			});
 
 			_socket.on("system", function(nickname, userCount, type) {
